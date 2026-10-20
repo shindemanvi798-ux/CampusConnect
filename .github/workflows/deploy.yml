@@ -29,18 +29,18 @@ jobs:
         with:
           node-version: 22
 
-      - name: Install dependencies
-        working-directory: frontend
+      - name: Install frontend dependencies
+        working-directory: campusconnect-react-fastapi/frontend
         run: npm install
 
       - name: Build React application
-        working-directory: frontend
+        working-directory: campusconnect-react-fastapi/frontend
         run: npm run build
 
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
         with:
-          path: frontend/dist
+          path: campusconnect-react-fastapi/frontend/dist
 
   deploy:
     environment:
